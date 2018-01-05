@@ -2,6 +2,18 @@ require 'http'
 require 'json'
 require 'eventmachine'
 require 'faye/websocket'
+require 'sinatra'
+
+Thread.new do
+  EM.run do
+  end
+end
+
+get '/' do
+  "hello world"
+end
+
+#TODO AUTH TOMMOROW
 
 rc = HTTP.post("https://slack.com/api/rtm.start", params: {
     token: ENV['SLACK_API_TOKEN'],
