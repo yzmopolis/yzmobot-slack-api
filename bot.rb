@@ -28,6 +28,11 @@ EM.run do
               text: "Pull The Lever <@#{data['user']}>!",
               channel: data['channel']}.to_json)
     end
+    if data['text'] == 'cusco'
+      ws.send({ type: 'message',
+              text: "I'll turn him into a flea. A harmless little flea. And then, I'll put that flea in a box, and then I'll put that box inside another box, and then I'll mail that box to myself. And when it arrives-AAHAHAHA! I'll SMASH IT WITH A HAMMER!",
+              channel: data['channel']}.to_json)
+    end
   end
   ws.on :close do
     p [:close, event.code, event.reason]
