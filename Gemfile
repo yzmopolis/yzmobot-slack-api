@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'http'
-gem 'json'
 gem 'faye-websocket'
 gem 'eventmachine'
-gem 'sinatra'
+gem 'slack-ruby-bot'
