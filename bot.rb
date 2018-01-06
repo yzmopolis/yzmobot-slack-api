@@ -13,18 +13,14 @@ get '/' do
   "hello world"
 end
 
-#TODO AUTH TOMMOROW
-
 rc = HTTP.post("https://slack.com/api/rtm.start", params: {
     token: ENV['SLACK_API_TOKEN'],
     # channel: '#general',
     # text: "That is the last time we're taking directions from a SQUIRREL!!",
     # as_user: true
-})
+    })
 
 rc = JSON.parse(rc.body)
-# puts JSON.pretty_generate(JSON.parse(rc.body))
-# puts rc['url'] omg it so weird
 url = rc['url']
 
 EM.run do
